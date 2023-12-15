@@ -32,17 +32,35 @@ public class Monitor {
         brillo = brillo + sumarBrillo;
     }
     
-    //Solo cuando esta encendido
-    public void setEncendido () {
-        encendido = false;
+    public void setEncenderApagar() {
+        if(encendido == true){
+            encendido = false;
+        }
+        else {
+            encendido = true;
+        }
     } 
     
     public void imprimirDetalles() {
-        System.out.println("El brillo es " + brillo + "| La marca es " + modelo + "| El monitor está encendido " + encendido);
+        String estadoMonitor = "";
+        if (encendido == true){
+            estadoMonitor = "encendido";
+        }
+        else {
+            estadoMonitor = "apagado";
+        }
+        System.out.println("El brillo es '" + brillo + "'| La marca es '" + modelo + "'| El monitor está '" + estadoMonitor + "'");
     }
     
     public String getDetalles() {
-        return "El brillo es " + brillo + "| La marca es " + modelo + "| El monitor está encendido " + encendido;
+        String estadoMonitor = "";
+        if (encendido == true){
+            estadoMonitor = "encendido";
+        }
+        else {
+            estadoMonitor = "apagado";
+        }
+        return "El brillo es '" + brillo + "'| La marca es '" + modelo + "'| El monitor está '" + estadoMonitor + "'";
     }
 
 
